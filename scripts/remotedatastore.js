@@ -4,7 +4,7 @@
   var $=window.jQuery;
 
   function RemoteDataStore(url) {
-    if(!selector){
+    if(!url){
       throw new Error('No remote URL supplie!');
     }
     this.serverUrl=url;
@@ -14,6 +14,12 @@
       console.log(serverResponse);
     });
   };
+  RemoteDataStore.prototype.getAll = function () {
+    $.get(this.serverUrl, function (serverResponse) {
+      console.log(serverResponse);
+    });
+  };
+
   App.RemoteDataStore=RemoteDataStore;
   window.App=App;
 })(window);
