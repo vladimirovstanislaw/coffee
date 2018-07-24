@@ -91,17 +91,19 @@
 
 </html>
 <!--
+[run browser-sync]
+
 cd C:/Projects/coffeerun
 browser-sync start --server  --files "*.html, scripts/*.js, stylesheets/*.css"
 
-go to GIT
+push to GIT
 git add .
 git commit -m "fifth commit"
 git remote add origin git@github.com:vladimirovstanislaw/coffee.git
 git push -u origin master
 
 
-turn to GIT-version [reset local changes]
+turn to GIT-version [reset local changes][[PULL]]
 git reset --hard HEAD
 git clean -xffd
 git pull

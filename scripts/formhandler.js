@@ -18,16 +18,17 @@
     this.$formElement.on('submit', function (event) {
       event.preventDefault();
 
+      var email=$("#emailInput").val();
       var data={};
       jQuery(this).serializeArray().forEach(function (item) {
         data[item.name]=item.value;
         console.log(item.name+" is "+item.value);
       });
-      if($("#coffeeOrder").val()==='vaska' & $("#strengthLevel").val()===100)
-      {
-        console.log('VASKA IS THE MOST POWERFULL RUSSIAN KOT');
-      }
-      console.log(data);
+      //var email=$("#emailInput").val();
+      ///$( "#single" ).val();
+      //console.log('joji email is=>'+email);
+      //console.log(data[emailAddress]);
+      //console.log(data);
       fn(data);
       this.reset();
       this.elements[0].focus();

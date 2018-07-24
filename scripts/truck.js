@@ -13,11 +13,11 @@
   };
   Truck.prototype.createOrder = function (order) {
     console.log('Adding order for '+ order.emailAddress);
-    this.db.add(order.emailAddress, order);
+    return this.db.add(order.emailAddress, order);
   };
   Truck.prototype.deliverOrder = function (customerId) {
     console.log('Delevering oreder for '+customerId);
-    this.db.remove(customerId);
+    return this.db.remove(customerId);
   };
   Truck.prototype.printOrders = function () {
     var customerIdArray= Object.keys(this.db.getAll());
