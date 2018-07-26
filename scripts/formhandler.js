@@ -29,10 +29,13 @@
       //console.log('joji email is=>'+email);
       //console.log(data[emailAddress]);
       //console.log(data);
-      fn(data);
-      this.reset();
-      this.elements[0].focus();
-    })
+      fn(data)
+      .then(function () {
+        this.reset();
+        this.elements[0].focus();
+      }.bind(this));
+      
+    });
   };
   FormHandler.prototype.addInputHandler = function (fn) {
     console.log('Setting input handler for form.');
